@@ -20,8 +20,8 @@ jobs:
       id: build
       uses: docker/build-push-action@v2
       with:
-        context: microservice_a .
-        tags: ${{ env.GITHUB_SHA }}
+        context: .
+        tags: microservice_a:${{ env.GITHUB_SHA }}
         file: ./flask_200/Dockerfile
         push: false
 
