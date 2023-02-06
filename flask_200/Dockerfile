@@ -5,7 +5,7 @@ FROM python:3.9-alpine
 WORKDIR /app
 
 # Copy the requirements.txt file to the container
-COPY requirements.txt .
+COPY flask_200/requirements.txt .
 
 # Install the dependencies
 RUN pip install -r flask_200/requirements.txt
