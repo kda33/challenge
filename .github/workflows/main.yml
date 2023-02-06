@@ -36,7 +36,7 @@ jobs:
 
     - name: Run Python script for testing
       run: |
-        docker run -d -p 5000:5000 ${{ steps.build.outputs.image-id }}
+        docker run -p 5000:5001 -d ${{ steps.build.outputs.image-id }}
         sleep 5
         source env/bin/activate
         python python-test/python_test.py
