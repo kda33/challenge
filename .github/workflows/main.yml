@@ -58,6 +58,8 @@ jobs:
       if: success()
       uses: docker/build-push-action@v4
       with:
-        context: .
         push: true
+        context: .
+        labels: latest
+        file: ./flask_200/Dockerfile
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/microservice_a:latest
