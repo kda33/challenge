@@ -53,13 +53,16 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-    - name: Push Docker Image to Docker registry
+    -
+      name: Docker push
       if: success()
-      uses: docker/build-push-action@v4
-      with:
-        push: true
-        context: .
-        labels: latest
-        file: ./flask_200/Dockerfile
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/microservice_a:latest
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/microservice_a:latest
+    # - name: Push Docker Image to Docker registry
+    #   if: success()
+    #   uses: docker/build-push-action@v4
+    #   with:
+    #     push: true
+    #     context: .
+    #     labels: latest
+    #     file: ./flask_200/Dockerfile
+    #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/microservice_a:latest
