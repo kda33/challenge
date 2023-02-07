@@ -1,7 +1,7 @@
 import requests
 
 # URL of the microservice
-url = "http://localhost:5000"
+url = "http://0.0.0.0:5000"
 
 # Send a GET request to the microservice
 response = requests.get(url)
