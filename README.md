@@ -4,9 +4,9 @@ In this challenge, I set up a repository and CI pipeline on GitHub that, upon a 
 
 ## Built With
 
-* [![Docker][docker.com]][Docker-url]
-* [![Flask][flask.palletsprojects.com]][Flask-url]
-* [![Python][python.org]][Python-url]
+* ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+* ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
+* ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 ## Prerequisites
 
