@@ -50,6 +50,6 @@ jobs:
       if: success()
       uses: docker/build-push-action@v4
       with:
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/microservice_a:${{ env.GITHUB_SHA }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/microservice_a:latest
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
