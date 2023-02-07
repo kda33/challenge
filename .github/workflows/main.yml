@@ -39,9 +39,10 @@ jobs:
 
     - name: Run Python script for testing
       run: |
-        docker run -d microservice_a:latest
+        docker run -d --name microservice_a microservice_a:latest
         docker ps -a
         sleep 5
+        docker logs microservice_a
         source env/bin/activate
         python python-test/python_test.py
 
