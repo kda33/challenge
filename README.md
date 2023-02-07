@@ -10,11 +10,12 @@ In this challenge, I set up a repository and CI pipeline on GitHub that, upon a 
 
 ## Prerequisites
 
-Basic knowledge of Flask, Python, Docker and CURL.
-Python installed on your system
-Build Flask app in docker image
-Setting Up the Parallel Jobs
-To set up the parallel jobs, you can define each job as a separate step in a YAML file.
+Basic knowledge of Flask, Python, Docker, and CURL. 
+Write:
+
+* Python script that sends an HTTP request to microservices
+* Dockerfile for Flask app
+* workflow for CI to set up the parallel jobs and define each job as a separate step in a YAML file.
 
 ### About the challenge
 
