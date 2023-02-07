@@ -39,7 +39,7 @@ jobs:
 
     - name: Run Python script for testing
       run: |
-        docker run -p 5000:5000 -d microservice_a:latest
+        docker run -d microservice_a:latest
         docker ps -a
         sleep 5
         telnet localhost 5000
