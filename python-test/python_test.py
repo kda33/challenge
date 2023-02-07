@@ -1,26 +1,12 @@
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
-# URL of the microservice
-url = "http://172.17.0.2:5000"
+session = requests.Session()
+retry = Retry(total=5, backoff_factor=0.1, status_forcelist=[ 500, 502, 503, 504 ])
+adapter = HTTPAdapter(max_retries=retry)
+session.mount('http://', adapter)
 
-# Send a GET request to the microservice
-response = requests.get(url)
+response = session.get("http://172.17.0.2:5000")
 
-# Print the status code of the response
-print(f"Status code: {response.status_code}")
-
-# Print the content of the response
-print(f"Response content: {response.content}")
-
-# import requests
-# from requests.adapters import HTTPAdapter
-# from urllib3.util.retry import Retry
-
-# session = requests.Session()
-# retry = Retry(total=5, backoff_factor=0.1, status_forcelist=[ 500, 502, 503, 504 ])
-# adapter = HTTPAdapter(max_retries=retry)
-# session.mount('http://', adapter)
-
-# response = session.get("http://172.17.0.2:5000")
-
-# print(response.text)
+print(response.text)
