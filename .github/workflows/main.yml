@@ -22,7 +22,7 @@ jobs:
       with:
         context: .
         tags: microservice_a
-        labels: ${{ env.GITHUB_SHA }}
+        labels: latest
         file: ./flask_200/Dockerfile
         push: false
 
@@ -38,7 +38,7 @@ jobs:
 
     - name: Run Python script for testing
       run: |
-        docker run -p 5000:5000 -d microservice_a:${{ env.GITHUB_SHA }}
+        docker run -p 5000:5000 -d microservice_a:latest
         sleep 5
         source env/bin/activate
         python python-test/python_test.py
