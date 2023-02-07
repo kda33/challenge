@@ -56,6 +56,6 @@ jobs:
 
     - name: Push Docker Image to Docker registry
       if: success()
-      uses: docker/push-action@v1
+      uses: docker/build-push-action@v5
       with:
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/microservice_a:latest
