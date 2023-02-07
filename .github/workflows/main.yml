@@ -21,7 +21,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        tags: microservice_a
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/microservice_a
         labels: latest
         file: ./flask_200/Dockerfile
         push: false
@@ -39,7 +39,7 @@ jobs:
 
     - name: Run Python script for testing
       run: |
-        docker run -d --name microservice_a microservice_a:latest
+        docker run -d --name microservice_a ${{ secrets.DOCKERHUB_USERNAME }}/microservice_a:latest
         docker ps -a
         docker images
         sleep 5
