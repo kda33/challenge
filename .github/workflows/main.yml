@@ -41,6 +41,7 @@ jobs:
       run: |
         docker run -d --name microservice_a microservice_a:latest
         docker ps -a
+        docker images
         sleep 5
         docker logs microservice_a
         source env/bin/activate
