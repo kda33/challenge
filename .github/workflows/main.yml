@@ -6,11 +6,11 @@ on:
       - master
 
 jobs:
-  build1:
+  job_a:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        build: [build1]
+        build: [job_a]
 
     steps:
     - name: Checkout code
@@ -57,11 +57,11 @@ jobs:
       if: success()
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/microservice_a:latest
   
-  build2:
+  job_b:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        build: [build2]
+        build: [job_b]
 
     steps:
     - name: Checkout code
@@ -109,11 +109,11 @@ jobs:
       if: success()
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/microservice_b:latest
 
-  build3:
+  job_c:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        build: [build3]
+        build: [job_c]
 
     steps:
     - name: Checkout code
