@@ -15,7 +15,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Set the environment variable for Flask
-ENV FLASK_APP=app.py
+ENV FLASK_APP=flask_500/app.py
 EXPOSE 5000
 # Set the command to run the app when the container starts
 CMD ["flask", "run", "--host=0.0.0.0"]
